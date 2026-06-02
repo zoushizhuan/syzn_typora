@@ -1,0 +1,88 @@
+robot_name: Dobot
+rotation_mode: xyz
+rotation_as_degree: true
+translation_scale: 0.001
+is_robot_status_tcp_server: false
+robot_model: cr10as
+joint_lower_limit:
+  - -360
+  - -360
+  - -360
+  - -360
+  - -360
+  - -360
+joint_upper_limit:
+  - 360
+  - 360
+  - 360
+  - 360
+  - 360
+  - 360
+joints_base:
+  - 0
+  - 90
+  - 0
+  - 90
+  - 0
+  - 0
+translations_scale: 0.001
+arm_port: 5000
+with_control_center: true
+robot_error_handler:
+  collect_failure_case:
+    error_id:
+      - 1
+      - 001
+flange_z_min: 200
+disable_motion_planner_checker: false
+visualizer_enable: false
+robot_monitor_vis_enable: false
+link_collision_check_enable:
+  - false
+  - false
+  - false
+  - true
+  - true
+  - true
+  - true
+  - true
+manipulability_threshold: 0.01
+invalid_grasp_filter_threshold: 5
+invalid_grasp_max_num: 10
+invalid_grasp_check_mode: object_id
+sample_steplen_above_pose_to_pre_grasp: 0.03
+sample_steplen_pre_grasp_to_grasp: 0.01
+collision_objects:
+  mall:
+    type: Box
+    side_lengths:
+      - 0.3
+      - 0.3
+      - 2.1
+    center_pose:
+      - 0.86878
+      - 0.7906599999999999
+      - 0.51583
+      - 1
+      - 0
+      - 0
+      - 0
+  nall:
+    type: Box
+    side_lengths:
+      - 0.2
+      - 1
+      - 0.5
+    center_pose:
+      - 1.2
+      - 0.026
+      - 0
+      - 1
+      - 0
+      - 0
+      - 0
+arm_ip: 0.0.0.0
+collision_check_mode: custom
+flange_z_max: 999
+is_upright: true
+enable_roboeye_timing_task: true

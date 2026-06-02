@@ -1,0 +1,5 @@
+robot_name: Common
+robot_model: Common
+rotation_mode: ZYX
+rotation_as_degree: True
+translations_scale: 0.001

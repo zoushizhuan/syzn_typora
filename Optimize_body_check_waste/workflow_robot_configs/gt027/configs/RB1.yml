@@ -1,0 +1,81 @@
+robot_name: Ur
+rotation_mode: rotvec
+rotation_as_degree: false
+joint_as_degree: true
+translation_scale: 0.001
+is_robot_status_tcp_server: false
+robot_model: ur10
+joint_lower_limit:
+  - -360
+  - -360
+  - -360
+  - -360
+  - -360
+  - -360
+joint_upper_limit:
+  - 360
+  - 360
+  - 359
+  - 360
+  - 360
+  - 360
+translations_scale: 0.001
+arm_port: 5000
+with_control_center: true
+robot_error_handler:
+  collect_failure_case:
+    error_id:
+      []
+flange_z_min: -500
+flange_z_max: 999
+is_upright: true
+disable_motion_planner_checker: false
+visualizer_enable: false
+robot_monitor_vis_enable: false
+link_collision_check_enable:
+  - false
+  - false
+  - true
+  - true
+  - true
+  - false
+  - true
+  - true
+manipulability_threshold: 0.02
+invalid_grasp_filter_threshold: 15
+invalid_grasp_max_num: 0
+invalid_grasp_check_mode: object_id
+sample_steplen_above_pose_to_pre_grasp: 0.01
+sample_steplen_pre_grasp_to_grasp: 0.01
+collision_objects:
+  zhangaiwu:
+    type: Box
+    side_lengths:
+      - 0.15
+      - 0.75
+      - 0.54
+    center_pose:
+      - 0.58
+      - 1.047
+      - 0.567
+      - 1
+      - 0
+      - 0
+      - 0
+  zhangaiwu1:
+    type: Box
+    side_lengths:
+      - 0.4
+      - 0.4
+      - 0.4
+    center_pose:
+      - 0.187
+      - 1.211
+      - 0.567
+      - 1
+      - 0
+      - 0
+      - 0
+arm_ip: 0.0.0.0
+collision_check_mode: custom
+enable_roboeye_timing_task: true

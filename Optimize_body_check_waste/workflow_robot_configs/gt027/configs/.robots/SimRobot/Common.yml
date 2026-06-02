@@ -1,0 +1,11 @@
+robot_name: SimRobot
+rotation_mode: XYZ
+rotation_as_degree: True
+translations_scale: 0.001
+arm_ip: 0.0.0.0
+arm_port: 5000
+robot_server_ip: 127.0.0.1
+robot_server_port: 8000
+default_response: "raw"
+
+robot_model: Common

@@ -1,0 +1,24 @@
+robot_name: Yaskawa
+rotation_mode: xyz
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: false
+arm_ip: 0.0.0.0
+arm_port: 11000
+robot_server_port: 11001
+
+robot_model: motoman-ms165
+joint_lower_limit:
+  - -180
+  - -60
+  - -147
+  - -360
+  - -130
+  - -360
+joint_upper_limit:
+  - 180
+  - 76
+  - 90
+  - 360
+  - 130
+  - 360

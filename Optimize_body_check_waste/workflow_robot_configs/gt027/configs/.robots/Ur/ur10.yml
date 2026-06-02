@@ -1,0 +1,22 @@
+robot_name: Ur
+rotation_mode: rotvec
+rotation_as_degree: false
+joint_as_degree: true
+translation_scale: 0.001
+is_robot_status_tcp_server: false
+
+robot_model: ur10
+joint_lower_limit:
+  - -360
+  - -360
+  - -360
+  - -360
+  - -360
+  - -360
+joint_upper_limit:
+  - 360
+  - 360
+  - 360
+  - 360
+  - 360
+  - 360

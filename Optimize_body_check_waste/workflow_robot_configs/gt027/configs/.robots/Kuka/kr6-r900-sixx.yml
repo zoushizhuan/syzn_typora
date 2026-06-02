@@ -1,0 +1,21 @@
+robot_name: Kuka
+rotation_mode: ZYX
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: false
+
+robot_model: kr6-r900-sixx
+joint_lower_limit:
+  - -170
+  - -190
+  - -120
+  - -185
+  - -120
+  - -350
+joint_upper_limit:
+  - 170
+  - 45
+  - 156
+  - 185
+  - 120
+  - 350

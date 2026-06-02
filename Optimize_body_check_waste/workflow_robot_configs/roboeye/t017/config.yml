@@ -1,0 +1,217 @@
+# 以下配置为每次部署一定需要修改、确认的参数
+robot_model: motoman-gp25
+robot_name: Yaskawa
+roboeye_ip: localhost
+roboeye_port: 40001
+default_response: raw
+arm_ip: 192.168.6.220
+arm_port: 11000
+robot_server_ip: 192.168.6.230
+robot_server_port: 11001
+app2d_ip: 192.168.6.130
+app2d_port: 5400
+trigger: capture
+trigger2d: capture2d
+visualizer_enable: true
+
+# 拍照方式 runonce、rununtil
+# " "/G004/RoboeyePoseCorrection
+task: ' '
+# runonce/runutil
+trigger_mode: runonce
+
+#关节正限位，单位为角度
+joint_upper_limit:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+joint_lower_limit:
+- 0
+- 0
+- 0
+- 0
+- 0
+- 0
+above_pose_as_cpose:
+  final_grasps:
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+tcp_ee:
+  final_grasps:
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+tr_robot_cam_file:
+  final_grasps: 
+    /home/syzn/Desktop/working_dir_all/310/left/workflow.data/tf_arm_camera.transform
+workflow_config_dict:
+  left: /home/syzn/Desktop/working_dir_all/310/left/workflow.cfg
+switch_workflow_msg_2d:
+  left: "VCGP, 0\r\n"
+template_flag_idx_start: 0
+template_flag_idx_end: 1
+capture_msg_2d:
+  '12': "VTGF,0\r\n"
+place_positions:
+  place:
+    '12':
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    '13':
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    - 9999.99
+    - 9999.99
+home_as_jpose:
+  final_grasps:
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+  - 9999.99
+flange_z_min: 99999
+
+#碰撞环境设置, 设置格式如下：
+# collision_objects:
+#   wall: #障碍物名称
+#     type: "Box" #障碍类型
+#     side_lengths: [0.1, 0.1, 3] #障碍在x，y，z方向的长度 单位：M
+#     center_pose: [1.0292, 0.4429, 1.0062, 1, 0, 0, 0] #障碍中心位姿[x,y,z,1,0,0,0] 单位：M
+# 建议单位统一为mm
+collision_objects:
+  long:
+    type: Box
+    side_lengths:
+    - 5
+    - 5
+    - 5
+    center_pose:
+    - 0
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+app2d_adjust_threshold_x: 0
+app2d_adjust_threshold_y: 0
+app2d_adjust_threshold_a: 0
+#最大矫正次数，超过数值会给3
+max_correction_num: 1
+
+#报错复位
+# robot_monitor_enable(实时获取机器人状态) = ture 时，middleware会见识示教器报警状态
+robot_monitor_enable: ture
+robot_error_handler:
+  reset:
+    error_id: []
+    project: main
+    program: QCumber_DB_SELECT
+  collect_failure_case:
+    error_id:
+    - 1
+
+
+####################################################################################-
+# 以下参数需要给默认值
+
+manipulability_threshhold: 0.017
+# 上方点到进攻点检测采样步长：步长越小，采样检测点越多，筛选越准确，检测速度越慢
+sample_steplen_above_pose_to_pre_grasp: 0.03
+# 进攻点到抓取点检测采样步长：步长越小，采样检测点越多，筛选越准确，检测速度越慢
+sample_steplen_pre_grasp_to_grasp: 0.01
+
+# 进攻方式：S —— 垂直移动到抓取点；Z —— 沿Z方向移动到抓取点
+pre_grasp_mode: S   # 'S/Z/AUTO' -- '直下/沿Z方向/自动（根据抓取点位置自动选择SD/ZD， todo）'
+# 撤退方式：S —— 垂直移动到撤退点；Z —— 沿Z方向移动到撤退点；AUTO ——根据v撤退区域参数自动选择
+retreat_mode: S   # 'S/Z/AUTO' -- '直上/沿Z方向/自动（根据抓取点位置选择SU/ZU）'
+# for grasp planner --end
+
+# 过滤条件（按工件、按抓取点）
+invalid_grasp_check_mode: object_id   #['object_id', 'grasp_id']
+# 失败抓取点过滤距离阈值
+invalid_grasp_filter_threshold: 25
+
+
+#是否打印调试信息:关闭后, 不会输出 manipulability_threshhold等调试信
+debugging: false
+
+# 建议不要双重否定
+disable_app2d: true
+
+# 检测对象
+bin_pc_variable_name: pc_0
+# 框内最少点云数量， 小于该数量，且超过最大无抓取点设置，会发送推框信号（4）给机器人
+bin_pc_min_count: 99999
+# 最大无抓取点次数， 无抓取点次数超过该值会发送无抓取点信号（-1）给机器人
+no_grasp_num_max: 1
+# 触发移框信号的工件数量上限
+move_bin_max_part_num: 1
+
+# Debug
+#启用机器人实时动作监控图形窗口
+robot_monitor_vis_enable: true
+
+#################################################################################
+# 以下参数需要给默认值并且隐藏
+
+#内置参数, 不需要现场更改, 下次更新隐藏
+translations_scale: 0.001
+log_file_path: /root/middleware/log
+profile_log_on: true
+print_profile_summary_only: true
+update_bin: false
+gripper_self_collision_check: true
+
+# 以后应该和机器人绑定
+rotation_mode: ZYX
+
+rotation_as_degree: true
+robot_debugging: false
+
+
+#################################################################################
+# 以下参数注释并显示
+# 根据工件在框内的位置选择撤退方式
+# 撤退位置选择区域相关参数： 
+# 抓取点坐标在下方参数区间内，撤退点=进攻点， 
+# 否则，撤退点取抓取点世界坐标Z轴偏移retreat_distance后的位置
+
+# retreat_mode_threashold_x_max: 800
+# retreat_mode_threashold_x_min: 524
+# retreat_mode_threashold_y_max: 259
+# retreat_mode_threashold_y_min: -222
+
+# RB2
+# multi_robots_info:
+# # *注意*: "RB1"为预留机器人id, 如果在此处添加id为"RB1"的机器人设置, 会覆盖参数(arm_ip/arm_port/robot_name/robot_debugging/robot_as_client)
+#   RB2: #机器人id
+#    "manufacturer": "Estun" #机器人厂商
+#    "ip": "192.168.6.230"# tcp通信 ip
+#    "port": 6000 # tcp通信 port
+#    "robot_debugging": True # 是否打印调试信息
+#    "robot_as_client": True # 机器人为是否为tcp客户端
+
+# 3DPoseCorrection
+# task:" " -> RoboeyePoseCorrection
+# pose_correction_threshold_x: 0
+# pose_correction_threshold_y: 0
+# pose_correction_threshold_a: 0
+# max_correction_num: 50

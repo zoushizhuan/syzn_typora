@@ -1,0 +1,15 @@
+robot_name: Aubo
+rotation_mode: ZYX
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: false
+arm_port: 8000
+robot_base:
+    - 0.0
+    - 0.0
+    - 23.5
+    - 0.0
+    - 0.0
+    - 0.0
+
+robot_model: Common

@@ -1,0 +1,21 @@
+robot_name: Fanuc
+rotation_mode: xyz
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: false
+
+robot_model: r-2000ic-210f
+joint_lower_limit:
+  - -180
+  - -180
+  - -180
+  - -180
+  - -180
+  - -180
+joint_upper_limit:
+  - 180
+  - 180
+  - 180
+  - 180
+  - 180
+  - 180

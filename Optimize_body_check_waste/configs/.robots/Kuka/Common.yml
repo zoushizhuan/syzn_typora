@@ -1,0 +1,7 @@
+robot_name: Kuka
+rotation_mode: ZYX
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: false
+
+robot_model: Common

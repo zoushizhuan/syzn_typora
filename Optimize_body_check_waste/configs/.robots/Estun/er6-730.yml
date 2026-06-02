@@ -1,0 +1,26 @@
+robot_name: Estun
+rotation_mode: ZYX
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: true
+robot_error_reset_enabled: true
+arm_ip: 0.0.0.0
+arm_port: 5005
+robot_server_ip: 0.0.0.0
+robot_server_port: 5000
+
+robot_model: er6-730
+joint_lower_limit:
+  - -170
+  - -80
+  - -190
+  - -170
+  - -130
+  - -360
+joint_upper_limit:
+  - 170
+  - 130
+  - 60
+  - 170
+  - 130
+  - 360

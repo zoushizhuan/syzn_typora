@@ -1,0 +1,15 @@
+{
+    "grasp_eval_failed_samples": [],
+    "grasp_eval_result": "PASSED",
+    "maximum_allowable_percentage": 50.0,
+    "planner_avg_runtime_baseline": 0.7760000228881836,
+    "planner_avg_runtime_test_result": "PASSED",
+    "planner_regression_result": "PASSED",
+    "workflow_dataset_nums": 1,
+    "workflow_planner_processor_avg_runtime": [
+        [
+            "roboeye/test/EVA4/2025-07-09-13-40-19",
+            1.0011919736862183
+        ]
+    ]
+}

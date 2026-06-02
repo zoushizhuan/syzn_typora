@@ -1,0 +1,88 @@
+robots:
+  - manufacturer: Common
+    display_text: "通用"
+    models:
+      - Common
+
+  - manufacturer: Estun
+    display_text: "Estun 埃斯顿"
+    models:
+      - er10-900
+      - er12-1510
+      - er12b-1510
+      - er130b-3200
+      - er170-2650
+      - er20-1780
+      - er280-3200
+      - er50b-2100
+      - er6-730
+      - er7-910
+      - er8-720
+      - er20b-1760
+      - Common
+
+  - manufacturer: Fanuc
+    display_text: "Fanuc 发那科"
+    models:
+      - lrmate200id7l
+      - r-2000ic-210f
+      - r-2000ic-210l
+      - m10id12
+      - Common
+
+  - manufacturer: Aubo
+    display_text: "Aubo 遨博"
+    models:
+      - aubo-i10
+      - aubo-i5
+      - Common
+
+  - manufacturer: Kuka
+    display_text: "Kuka 库卡"
+    models:
+      - kr6-r900-sixx
+      - Common
+
+  - manufacturer: Yaskawa
+    display_text: "Yaskawa 安川"
+    models:
+      - motoman-gp12
+      - motoman-gp25
+      - motoman-ms165
+      - Common
+
+  - manufacturer: Nachi
+    display_text: "Nachi/OTC 那智"
+    models:
+      - sra210h-02
+      - Common
+
+  - manufacturer: SimRobot
+    display_text: "SimRobot 模拟机器人"
+    models:
+      - Common
+
+  - manufacturer: Kawasaki
+    display_text: "Kawasaki 川崎"
+    models:
+      - Common
+      - bx200l-toyota
+
+  - manufacturer: ABB
+    display_text: "ABB ABB"
+    models:
+      - Common
+
+  - manufacturer: Ur
+    display_text: "UR 优傲"
+    models:
+      - ur5
+      - ur10
+      - ur10e
+      - Common
+
+  - manufacturer: Dobot
+    display_text: "Dobot 越疆"
+    models:
+      - cr10as
+      - Common

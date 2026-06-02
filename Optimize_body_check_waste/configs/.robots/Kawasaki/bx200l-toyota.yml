@@ -1,0 +1,28 @@
+robot_name: Kawasaki
+rotation_mode: ZYZ
+rotation_as_degree: True
+translations_scale: 0.001
+is_robot_status_tcp_server: false
+joints_base:
+  - 90.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+
+robot_model: bx200l-toyota
+joint_lower_limit:
+  - -160
+  - -60
+  - -75
+  - -210
+  - -125
+  - -210
+joint_upper_limit:
+  - 160
+  - 76
+  - 90
+  - 210
+  - 125
+  - 210
